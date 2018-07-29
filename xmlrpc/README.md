@@ -1,4 +1,4 @@
-### (XML-RPC)[https://ws.apache.org/xmlrpc]
+### [XML-RPC](https://ws.apache.org/xmlrpc)
 
 XML-RPC是通过http传输XML来实现远程过程调用，跨越不同操作系统，不同编程语言
 
@@ -12,7 +12,7 @@ XML-RPC是通过http传输XML来实现远程过程调用，跨越不同操作系
         XmlRpcServer xmlRpcServer = webServer.getXmlRpcServer();
 
         PropertyHandlerMapping phm = new PropertyHandlerMapping();
-        phm.addHandler(Func.class.getName(), FuncImpl.class); // Func.*
+        phm.addHandler(Func.class.getName(), FuncImpl.class); // demo.xmlrpc.Func.*
 
         XmlRpcSystemImpl.addSystemHandler(phm); // system.*
 
@@ -42,7 +42,7 @@ XML-RPC是通过http传输XML来实现远程过程调用，跨越不同操作系
 POST / HTTP/1.1
 Content-Type: text/xml
 User-Agent: Apache XML RPC 3.0 (Sun HTTP Transport)
-Authorization: Basic YWRtaW46MTIzNDU2   # 此处为身份验证，默认格式是 `admin:password`的base64编码
+Authorization: Basic YWRtaW46MTIzNDU2   <!-- 此处为身份验证，默认格式是 `admin:password`的base64编码 -->
 Cache-Control: no-cache
 Pragma: no-cache
 Host: 172.17.0.2:8080
@@ -128,8 +128,8 @@ Connection: close
 
 客户端的一些可用属性如下（具体查看官网）：
 
---- | ---
 Property Name | Description
+--- | ---
 basicUserName | The user name, if your HTTP server requires basic authentication.
 basicPassword | The user password, if your HTTP server requires basic authentication.
 basicEncoding | Specifies the encoding being used to create the base 64 encoded Authorization header, which is being used for basic authentication. By default, the value of the encoding property is used. The encoding property itself defaults to UTF-8.
